@@ -96,3 +96,9 @@ func main() {
 // Output: 78.53981633974483
 // Output: 100
 ```
+All `totalArea` knows about each shape is that it has an area method. So `totalArea` would not be able to access the struct  fields for the circle or rectangle (or any other possible methods).
+
+Nothing additional is required to implement an interface (there is no implements orextends keyword). It’s sufficient to merely  have a method with the same name and signature.
+
+* Interfaces can also be used as fields.
+
