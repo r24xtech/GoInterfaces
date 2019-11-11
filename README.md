@@ -130,3 +130,8 @@ func (m *MultiShape) area() float64 {
   return area
 }
 ```
+Now a MultiShape can contain Circles, Rectangles, or even other MultiShapes.
+
+<hr>
+
+
