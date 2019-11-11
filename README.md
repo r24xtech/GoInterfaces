@@ -102,3 +102,31 @@ Nothing additional is required to implement an interface (there is no implements
 
 * Interfaces can also be used as fields.
 
+```go
+type MultiShape struct {
+  shapes []Shape
+}
+```
+
+We can create a `MultiShape` like this:
+
+```go
+multiShape := MultiShape{
+  shapes: []Shape{
+    Circle{0, 0, 5},
+    Rectangle{0, 0, 10, 10},
+  },
+}
+```
+
+We can even turn `MultiShape` itself into a `Shape` by giving it an area method:
+
+```go
+func (m *MultiShape) area() float64 {
+  var area float64
+  for _, s := range m.shapes {
+    area += s.area()
+  }
+  return area
+}
+```
