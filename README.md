@@ -55,3 +55,44 @@ func (r *Rectangle) area() float64 {
 ```
 
 Suppose we want to write a function that calculates the area of several shapes. 
+
+```go
+// bad example
+func totalArea(circles []Circle, rectangles []Rectangle) float64 {
+  var total float64
+  for _, c := range circles {
+    total += c.area()
+  }
+  for _, r := range rectangles {
+    total += r.area()
+  }
+  return total
+}
+```
+This works, but it has a  major  issue — whenever we define a new shape, we have to change our function to handle it (a third parameter for Polygons, a fourth for Squares, etc.).
+
+This is the problem interfaces are designed to solve.
+
+Because both of our shapes have an area method, they both implement the Shape interface and we can change our function to this:
+
+```go
+func totalArea(shapes ...Shape) []float64 {
+  var areas []float64
+  for _, s := range shapes {
+    areas = append(areas, s.area())
+  }
+  return areas
+}
+
+func main() {
+  c := Circle{0, 0, 5}
+  r := Rectangle{0, 0, 10, 10}
+
+  a := totalArea(&c, &r)
+  for i := 0; i < len(a); i++ {
+    fmt.Println("Output: ", a[i])
+  }
+}
+// Output: 78.53981633974483
+// Output: 100
+```
