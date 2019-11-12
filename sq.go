@@ -12,7 +12,7 @@ type Stack struct {
 type Queue struct {
   slice []int
 }
-
+/*To implement an interface in Go, we just need to implement all the methods in the interface.*/
 type dataStructures interface {
   Push() []int
   Pop() []int
