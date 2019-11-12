@@ -77,9 +77,18 @@ func popDs(ds ...dataStructures) [][]int {
   return allDs
 }
 
+func Print(a [][]int) {
+  if len(a) > 0 {
+    fmt.Println("stack: ", a[0], "\n", "queue: ", a[1])
+  } else {
+    fmt.Println("stack: []", "\n", "queue: []")
+  }
+}
+
 func main() {
   s1 := new(Stack)
   q1 := new(Queue)
+
   var a [][] int
   fmt.Println("1-Push; 2-Pop; 3-Print; 4-End\n\n")
   myloop:for {
@@ -87,7 +96,7 @@ func main() {
     switch option {
     case 1: a = pushDs(s1, q1)
     case 2: a = popDs(s1, q1)
-    case 3: fmt.Println("stack: ", a[0], "\n", "queue: ", a[1])
+    case 3: Print(a)
     case 4: break myloop
     default: fmt.Println("Invalid option.")
     }
