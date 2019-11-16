@@ -19,7 +19,7 @@ type Node struct {
 // the key field can be of any type (string, int, float,...)
 ```
 
-* Like a struct, an interface is created using the `type` keyword, followed by a name and the keyword `interface`. But instead of defining fields, we define a **method set**. A method set is a **list of methods** that a type must have in order to implement the inter‐face.
+* Like a struct, an interface is created using the `type` keyword, followed by a name and the keyword `interface`. But instead of defining fields, we define a **method set**. A method set is a **list of methods** that a type must have in order to implement the interface.
 
 * If the struct has a pointer receiver on some of its methods, it is better to use it for the rest of the methods because it enables better consistency and predictability for the struct behaviors.
 * `(s Stack)` vs. `(s *Stack)`: If you want to modify the data of a receiver from the method, the receiver must be a pointer.
@@ -134,4 +134,5 @@ Now a MultiShape can contain Circles, Rectangles, or even other MultiShapes.
 
 <hr>
 
+https://www.alexedwards.net/blog/interfaces-explained
 
