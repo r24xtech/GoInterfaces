@@ -136,3 +136,5 @@ Now a MultiShape can contain Circles, Rectangles, or even other MultiShapes.
 
 https://www.alexedwards.net/blog/interfaces-explained
 
+
+https://www.digitalocean.com/community/tutorials/how-to-use-interfaces-in-go?utm_source=reddit&utm_medium=social&utm_campaign=do-interfaces
